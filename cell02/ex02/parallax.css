@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  .parallax {
+    height: 100vh;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #parallax1 {
+    background-image: url('https://kpopping.com/documents/2e/3/800/aespa-Armageddon-1st-Full-Album-Concept-Photos-documents-5(16).jpeg?v=5cfcf');
+  }
+  
+  #parallax2 {
+    background-image: url('https://kpopping.com/documents/fd/4/800/aespa-Armageddon-1st-Full-Album-Concept-Photos-documents-8(15).jpeg?v=5cfcf'); /* Replace with your image */
+  }
+  
+  .centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .black-block {
+    height: 300px;
+    background-color: black;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  .black-block p {
+    font-size: 1.2em;
+    color: #ccc;
+  }
+  
