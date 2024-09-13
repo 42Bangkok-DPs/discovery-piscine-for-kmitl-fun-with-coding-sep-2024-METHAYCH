@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>basic calculator</title>
-        <style>
-           body {
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,8 +40,9 @@
             background-color: #433c3f;
             color: #ff69b4;
         }
-        </style>
-    </head>
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <body>
     <div class="calculator">
         <input type="text" id="left" min="0">
@@ -53,57 +54,55 @@
             <option value="%">%</option>
         </select>
         <input type="text" id="right" min="0">
-        <input type="submit" value="Try me!" onclick="calculate()">
+        <input type="submit" value="Try me!" id="calculate-button">
     </div>
     
     <script>
-        function calculate() {
-            const leftstr = parseInt(document.getElementById('left').value);
-            const operator = document.getElementById('operator').value;
-            const rightstr = parseInt(document.getElementById('right').value);
-            
-            const left = parseFloat(leftstr);
-            const right = parseFloat(rightstr);
+        $(document).ready(function() {
+            $('#calculate-button').on('click', function() {
+                const left = parseInt($('#left').val());
+                const operator = $('#operator').val();
+                const right = parseInt($('#right').val());
 
-            if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
-                alert('Error :(');
-                console.log('Error :(');
-                return;
-            }
-    
-            if ((operator === '/' || operator === '%') && right === 0) {
-                alert("It's over 9000!");
-                console.log("It's over 9000!");
-                return;
-            }
-    
-            let result;
-            switch (operator) {
-                case '+':
-                    result = left + right;
-                    break;
-                case '-':
-                    result = left - right;
-                    break;
-                case '*':
-                    result = left * right;
-                    break;
-                case '/':
-                    result = left / right;
-                    break;
-                case '%':
-                    result = left % right;
-                    break;
-            }
-    
-            alert('Result: ' + result);
-            console.log('Result :', result);
-        }
+                if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                    alert('Error :(');
+                    console.log('Error :(');
+                    return;
+                }
 
-        setInterval(function() {
-            alert('Please, use me...');
-        }, 30000);
+                if ((operator === '/' || operator === '%') && right === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                }
 
+                let result;
+                switch (operator) {
+                    case '+':
+                        result = left + right;
+                        break;
+                    case '-':
+                        result = left - right;
+                        break;
+                    case '*':
+                        result = left * right;
+                        break;
+                    case '/':
+                        result = left / right;
+                        break;
+                    case '%':
+                        result = left % right;
+                        break;
+                }
+
+                alert('Result: ' + result);
+                console.log('Result :', result);
+            });
+
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+        });
     </script>
 </body>
 </html>
