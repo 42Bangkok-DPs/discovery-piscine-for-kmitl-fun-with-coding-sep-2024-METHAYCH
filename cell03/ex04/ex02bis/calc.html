@@ -20,7 +20,7 @@
             width: 300px;
             text-align: center;
         }
-        input[type="text"], select, input[type="submit"] {
+        #left, #right, select, input[type="submit"] {
             display: block;
             margin-bottom: 10px;
             padding: 10px;
@@ -45,7 +45,7 @@
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="left" min="0">
+        <input id="left">
         <select id="operator">
             <option value="+">+</option>
             <option value="-">-</option>
@@ -53,22 +53,27 @@
             <option value="/">/</option>
             <option value="%">%</option>
         </select>
-        <input type="text" id="right" min="0">
+        <input id="right">
         <input type="submit" value="Try me!" id="calculate-button">
     </div>
     
     <script>
         $(document).ready(function() {
             $('#calculate-button').on('click', function() {
-                const left = parseInt($('#left').val());
+                const left = $('#left').val();
                 const operator = $('#operator').val();
-                const right = parseInt($('#right').val());
+                const right = $('#right').val();
 
-                if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                const regex = /[\+\-\*\/%\s\.]/;
+
+                if (isNaN(left) || isNaN(right) || (left) < 0 || (right) < 0 || regex.test(left) || regex.test(right)) {
                     alert('Error :(');
                     console.log('Error :(');
                     return;
                 }
+
+                left = parseInt(left);
+                right = parseInt(right);
 
                 if ((operator === '/' || operator === '%') && right === 0) {
                     alert("It's over 9000!");
