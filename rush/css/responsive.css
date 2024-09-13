@@ -1,0 +1,200 @@
+
+@media screen and (max-width: 768px) {
+
+    .hobby-container {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact{
+        padding-top: 80%;
+    }
+    section {
+        padding: 150px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me img {
+        width: 70%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .about-me-text h2 {
+        font-size: 32px;
+    }
+
+    .about-me-text p {
+        font-size: 18px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        padding: 40px;
+      }
+    
+      .direct-contact-container {
+        margin: 20px auto;
+      }
+    
+      .image-display {
+        max-width: 80%;
+      }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-links li a{
+        font-size: 13px;
+    }
+
+    .sec-text h2 {
+        font-size: 24px;
+    }
+
+    .artist-container {
+        grid-template-columns: 1fr;
+
+    }
+
+    #contact{
+        padding-top: 300%;
+    }
+    
+    .info-container {
+        flex-direction: column;
+        height: 120%;
+    }
+
+    .info-container img {
+        max-width: 35%;
+        max-height: auto;
+    }
+
+    .left-container {
+        flex-direction: row;
+        max-height: 30%;
+    }
+
+    .text-container {
+        margin-left: 20px;
+    }
+
+    .right-container {
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .education {
+        position: relative;
+        font-size: 14px;
+        margin-top: 30%;
+      }
+
+
+    .right-container1 td, .right-container2 p {
+        font-size: 14px;
+    }
+
+    .hobby-container img {
+        max-width: 100%;
+    }
+
+    .music p {
+        font-size: 2rem;
+    }
+
+    .scroll-down{
+        margin-top: 20px;
+    }
+
+    section {
+        padding: 50px;
+        height: 100%;
+    }
+    .about-me {
+        display: block;
+        align-items: center;
+        background-color: black;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+    .about-me img {
+        width: 70%;
+    
+    }
+
+    .about-me-text h2 {
+        font-size: 30px;
+    }
+
+    .about-me-text p {
+        font-size: 14px;
+    }
+
+    .education::after {
+        left: 31px;
+      }
+    
+      .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+    
+      .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+    
+      .left::after,
+      .right::after {
+        left: 15px;
+      }
+    
+    
+      .right {
+        left: 0%;
+      }
+      .topbar{
+        padding-bottom: 30px;
+    }
+
+    .contact-wrapper {
+        padding: 20px;
+      }
+    
+      .social-media-list li {
+        height: 55px;
+        width: 55px;
+        margin: 5px;
+      }
+    
+      .social-media-list li i {
+        font-size: 20px;
+      }
+    
+      .social-media-list li:after {
+        width: 55px;
+        height: 55px;
+      }
+    
+      .image-display {
+        max-width: 70%;
+      }
+    
+}
+  

@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+.education {
+  position: relative;
+  font-size: 14px;
+
+}
+
+.education h2 {
+  font-size: 30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 15%;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 20px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #190ca6;
+  top: 15px;
+  border-radius: 40%;
+  z-index: 1;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+
+.right::after {
+  left: -16px;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}

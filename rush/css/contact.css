@@ -1,0 +1,134 @@
+#contact {
+  width: 100%;
+  height: auto;
+  padding-bottom: 40px;
+}
+
+.section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding: 40px 0;
+  font: 300 60px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+
+.image-display {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  position: relative;
+  max-width: 840px;
+  gap: 20px;
+}
+
+.direct-contact-container {
+  max-width: 400px;
+}
+
+.contact-list {
+  list-style-type: none;
+  margin-left: 30px;
+}
+
+.list-item {
+  line-height: 2.5;
+  color: #aaa;
+}
+
+.contact-text {
+  font: 300 18px;
+  letter-spacing: 1.9px;
+  color: #bbb;
+}
+
+.place,
+.phone,
+.gmail {
+  margin-left: 40px;
+}
+
+.contact-text a {
+  color: #bbb;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+
+.contact-text a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.social-media-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-media-list li i {
+  font-size: 24px;
+}
+
+.social-media-list li a {
+  color: black;
+}
+
+.social-media-list li:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 0 1px #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-media-list li:hover {
+  background-color: black;
+}
+
+.social-media-list li:hover a {
+  color: white;
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.6);
+}
