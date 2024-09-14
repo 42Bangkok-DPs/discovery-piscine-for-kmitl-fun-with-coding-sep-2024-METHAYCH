@@ -1,53 +1,53 @@
-$(document).ready(function() {
-    function addTodo(text, addToTop = true) {
-        const $todoList = $('#ft_list');
-        const $todoItem = $('<div class="todo-item"></div>').text(text);
+function addTodo(text, addToTop = true) {
+    const todoList = document.getElementById('ft_list');
+    const todoItem = document.createElement('div');
+    todoItem.className = 'todo-item';
+    todoItem.innerText = text;
 
-        $todoItem.on('click', function() {
-            if (confirm('Do you want to remove this task?')) {
-                $todoItem.remove();
-                saveTodos();
-            }
-        });
-
-        if (addToTop) {
-            $todoList.prepend($todoItem);
-        } else {
-            $todoList.append($todoItem);
+    todoItem.addEventListener('click', function () {
+        const confirmDelete = confirm('Do you want to remove this task?');
+        if (confirmDelete) {
+            todoList.removeChild(todoItem);
+            saveTodos();
         }
-        
-        saveTodos();
+    });
+    if (addToTop) {
+        todoList.insertBefore(todoItem, todoList.firstChild);
+    } else {
+        todoList.appendChild(todoItem);
     }
+    
+    saveTodos();
+}
 
-    function createNewTodo() {
-        const todoText = prompt('Enter a new task:');
-        if (todoText) {
-            addTodo(todoText);
-        }
+function createNewTodo() {
+    const todoText = prompt('Enter a new task:');
+    if (todoText) {
+        addTodo(todoText);
     }
+}
 
-    function saveTodos() {
-        const todos = [];
-        $('#ft_list .todo-item').each(function() {
-            todos.push($(this).text());
-        });
+function saveTodos() {
+    const todos = [];
+    document.querySelectorAll('#ft_list .todo-item').forEach(todo => {
+        todos.push(todo.innerText);
+    });
 
-        const date = new Date();
-        date.setFullYear(date.getFullYear() + 1);
+    const date = new Date();
+    date.setFullYear(date.getFullYear() + 1);
 
-        document.cookie = `todos=${encodeURIComponent(JSON.stringify(todos))}; expires=${date.toUTCString()}; path=/; SameSite=Lax`;
+    document.cookie = `todos=${encodeURIComponent(JSON.stringify(todos))}; expires=${date.toUTCString()}; path=/; SameSite=Lax`;
+}
+
+function loadTodos() {
+    const cookies = document.cookie.split('; ');
+    const todoCookie = cookies.find(cookie => cookie.startsWith('todos='));
+    if (todoCookie) {
+        const todos = JSON.parse(decodeURIComponent(todoCookie.split('=')[1]));
+        todos.forEach(todo => addTodo(todo, false));
     }
+}
 
-    function loadTodos() {
-        const cookies = document.cookie.split('; ');
-        const todoCookie = cookies.find(cookie => cookie.startsWith('todos='));
-        if (todoCookie) {
-            const todos = JSON.parse(decodeURIComponent(todoCookie.split('=')[1]));
-            todos.forEach(todo => addTodo(todo, false));
-        }
-    }
+document.getElementById('new-todo').addEventListener('click', createNewTodo);
 
-    $('#new-todo').on('click', createNewTodo);
-
-    loadTodos();
-});
+window.onload = loadTodos;
