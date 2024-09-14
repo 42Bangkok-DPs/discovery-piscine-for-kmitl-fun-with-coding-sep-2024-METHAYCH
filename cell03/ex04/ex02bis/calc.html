@@ -72,10 +72,10 @@
                     return;
                 }
 
-                left = parseInt(left);
-                right = parseInt(right);
+                intleft = parseInt(left); 
+                intright = parseInt(right); 
 
-                if ((operator === '/' || operator === '%') && right === 0) {
+                if ((operator === '/' || operator === '%') && intright === 0) {
                     alert("It's over 9000!");
                     console.log("It's over 9000!");
                     return;
@@ -84,19 +84,19 @@
                 let result;
                 switch (operator) {
                     case '+':
-                        result = left + right;
+                        result = intleft + intright;
                         break;
                     case '-':
-                        result = left - right;
+                        result = intleft - intright;
                         break;
                     case '*':
-                        result = left * right;
+                        result = intleft * intright;
                         break;
                     case '/':
-                        result = left / right;
+                        result = intleft / intright;
                         break;
                     case '%':
-                        result = left % right;
+                        result = intleft % intright;
                         break;
                 }
 
