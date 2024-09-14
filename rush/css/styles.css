@@ -5,11 +5,11 @@
 
 body {
   font-family: 'Prompt', sans-serif;
-  background-image: url(/picture/Starry-Night.gif);
+  background-image: url(../picture/Starry-Night.gif);
 }
 
 .parallax{
-  background-image: url(/picture/Starry-Night.gif);
+  background-image: url(../picture/Starry-Night.gif);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -185,7 +185,7 @@ section {
 }
 
 .left-container {
-  background-image: url(/picture/Starry-Night.gif);
+  background-image: url(../picture/Starry-Night.gif);
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -196,7 +196,7 @@ section {
 }
 
 .right-container1, .right-container2  {
-  background-image: url(/picture/Starry-Night.gif);
+  background-image: url(../picture/Starry-Night.gif);
   flex: 1;
   height: 300px;
   padding: 10px;
